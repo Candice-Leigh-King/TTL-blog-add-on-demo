@@ -257,44 +257,189 @@
   
   </style>
 
+<head><script type="text/javascript">
+  // /<![CDATA[/
+  (function () {
+    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+    if (window.ShopifyBuy) {
+      if (window.ShopifyBuy.UI) {
+        ShopifyBuyInit();
+      } else {
+        loadScript();
+      }
+    } else {
+      loadScript();
+    }
+    function loadScript() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = scriptURL;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+      script.onload = ShopifyBuyInit;
+    }
+    function ShopifyBuyInit() {
+      var client = ShopifyBuy.buildClient({
+        domain: 'candyandtheking.myshopify.com',
+        storefrontAccessToken: 'cab3cab316e153c92c8cc9afe856b9fd',
+      });
+      ShopifyBuy.UI.onReady(client).then(function (ui) {
+        ui.createComponent('product', {
+          id: '7242827759797',
+          node: document.getElementById('product-component-164800951044'),
+          moneyFormat: '%24%7B%7Bamount%7D%7D',
+          options: {
+    "product": {
+      "styles": {
+        "product": {
+          "@media (min-width: 601px)": {
+            "max-width": "calc(25% - 20px)",
+            "margin-left": "20px",
+            "margin-bottom": "50px",
+            "border-radius": "0%"
+          }
+        },
+        "button": {
+          "font-family": "Noto Sans HK, sans-serif",
+          ":hover": {
+            "background-color": "#a85959"
+          },
+          "background-color": "#d17f7f",
+          ":focus": {
+            "background-color": "#a85959"
+          },
+          "border-radius": "0px",
+          "padding-left": "40px",
+          "padding-right": "40px",
+          "border-radius": "100%"
+        }
+      },
+      "buttonDestination": "modal",
+      "contents": {
+        "img": false,
+        "title": false,
+        "price": false,
+        "options": false
+      },
+      "text": {
+        "button": "BUY NOW"
+      },
+    },
+    "productSet": {
+      "styles": {
+        "products": {
+          "@media (min-width: 601px)": {
+            "margin-left": "-20px"
+          }
+        }
+      }
+    },
+    "modalProduct": {
+      "contents": {
+        "img": false,
+        "imgWithCarousel": true,
+        "button": false,
+        "buttonWithQuantity": true
+      },
+      "styles": {
+        "product": {
+          "@media (min-width: 601px)": {
+            "max-width": "100%",
+            "margin-left": "0px",
+            "margin-bottom": "0px"
+          }
+        },
+        "button": {
+          "font-family": "Noto Sans HK, sans-serif",
+          ":hover": {
+            "background-color": "#a85959"
+          },
+          "background-color": "#d17f7f",
+          ":focus": {
+            "background-color": "#a85959"
+          },
+          "border-radius": "100%",
+          "padding-left": "24px",
+          "padding-right": "24px",
+        },
+        "title": {
+          "font-family": "Noto Sans HK, sans-serif",
+          "font-weight": "normal"
+        },
+        "price": {
+          "font-family": "Noto Sans HK, sans-serif"
+        },
+        "compareAt": {
+          "font-family": "Noto Sans HK, sans-serif"
+        },
+        "unitPrice": {
+          "font-family": "Noto Sans HK, sans-serif"
+        },
+        "description": {
+          "font-family": "Noto Sans HK, sans-serif"
+        }
+      },
+      "text": {
+        "button": "Add to cart"
+      }
+    },
+    "option": {
+      "styles": {
+        "label": {
+          "font-family": "Noto Sans HK, sans-serif"
+        },
+        "select": {
+          "font-family": "Noto Sans HK, sans-serif"
+        }
+      },
+    },
+    "cart": {
+      "styles": {
+        "button": {
+          "font-family": "Noto Sans HK, sans-serif",
+          ":hover": {
+            "background-color": "#a85959"
+          },
+          "background-color": "#d17f7f",
+          ":focus": {
+            "background-color": "#a85959"
+          },
+          "border-radius": "100%"
+        }
+      },
+      "text": {
+        "total": "Subtotal",
+        "button": "Checkout"
+      },
+    },
+    "toggle": {
+      "styles": {
+        "toggle": {
+          "font-family": "Noto Sans HK, sans-serif",
+          "background-color": "#a85959",
+          ":hover": {
+            "background-color": "#d17f7f"
+          },
+          "border-radius": "100%",
+          ":focus": {
+            "background-color": "#a85959"
+          }
+        }
+      },
+    }
+  },
+        });
+      });
+    }
+  })();
+  // /]]>/
+  </script>
+  </head>
   <body>
-
-    <!-- <header class="grid-center">
-      <div class=" col-11 center mob-hide">
-        <a href="/" class="logo-home center "> 
-          <img src="/images/logo.png" alt="Through the Lyns Logo" /></a>
-      </div>
-      <p class=" col-1-middle fixed hamburger-color hamburger padded" style="z-index: 100;"> ☰
-      </p>
-      <nav class="grid-middle navigation-background-color page-nav mobile-menu banner" style="background-image: url(''); z-index: 100;">
-        <p class="cross exit right col-12"> ╳
-        </p>
-        <div class=" textarea-background-color radius-arch banner col-12 grid-middle" style="background-image: url('');">
-         
-          <div class=" col-12 grid-center  ">
-            <a href="/" class="logo center grow col-12-middle exit"> 
-              <img src="/images/logo.png" alt="Through the Lyns Logo" />
-            </a>
-            <div class="editable col-12 padded-sides text-med exit navigation-links">
-              <p><a class="" href="/#services">services</a></p>
-              <p><a class="" href="/#reviews">reviews</a></p>
-              <p><a class="" href="/#gallery">gallery</a></p>
-              <p><a class="" href="/#contact">contact</a></p>
-            </div>
-            <div class=" col-6_xs-9 grid-center navigation-socials">
-              <a class="padded-s" href="https://www.instagram.com/candy_and_the_king/"><span class="iconify" data-icon="ph:instagram-logo-fill"></span></a>
-              <a class="padded-s" href="https://www.facebook.com/candy.and.the.king/"><span class="iconify" data-icon="simple-icons:tiktok"></span></a>
-              <a class="padded-s" href="//www.tiktok.com/@candy_and_the_king"><span class="iconify" data-icon="brandico:facebook"></span></a>
-              <a class="padded-s" href="https://www.youtube.com/c/candyandtheking"><span class="iconify" data-icon="dashicons:youtube"></span></a> 
-
-          </div>
-            
-           </div>
-        </div>
-      </nav>
-    </header> -->
-
+    
     <header class="grid-center">
+      <div class="shop-button">
+        <div id='product-component-164800951044'></div>
+      </div>
       <div class=" col-11 center mob-hide" style="z-index: 100;">
         <a href="/" class="logo-home center "> 
           <img src="/images/logo.png" alt="Through the Lyns Logo" /></a>

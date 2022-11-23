@@ -1,2 +1,2 @@
-# ttl-blog-add-on-template
+# TTL-blog-add-on-demo
  

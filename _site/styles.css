@@ -617,20 +617,12 @@ font-family: 'Shrikhand', cursive;*/
 
   /* -------SHOP---- */
   
-  .shopify-button 
-    {
-    display: inline-block;
-    position: fixed;
-    line-height: 0.5;
-    bottom: 1rem;
-    right: 38%;
-    z-index: 2;
-    font-weight: 400;
-    color: white;
-    text-align: center;
-    }
-
- 
+  .shop-button
+  {
+  position: fixed;
+  z-index: 10;
+  }
+     
 
 /*------------------ HEADER ----------------*/
 header 
